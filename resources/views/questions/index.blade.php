@@ -3,18 +3,14 @@
     <form class="container">
         <div class="form-row">
             @foreach($forms[0]['questions'] as $question)
-                @php
-                    $variants=json_decode(stripslashes(html_entity_decode($question['variants'])),true);
-                @endphp
-
                 <div class="form-group col-md-4">
-                    <label for="inputState">{{$question['question']}}@if($question['is_dealbreaker'])<span class="text-danger">*</span>@endif</label>
+                    <label for="inputState">{{$question['question']}}@if($question['is_dealbreaker'])<span
+                            class="text-danger">*</span>@endif</label>
                     <select id="inputState" class="form-control">
-                        @foreach($variants as $variant)
+                        @foreach($question['variants'] as $variant)
                             <option>{{$variant}}</option>
                         @endforeach
                     </select>
-
                 </div>
             @endforeach
         </div>

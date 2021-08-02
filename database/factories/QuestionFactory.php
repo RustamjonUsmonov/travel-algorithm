@@ -27,7 +27,7 @@ class QuestionFactory extends Factory
             'form_id'=>$formId,
             'is_dealbreaker'=>$this->faker->boolean,
             'question'=>$this->faker->sentence(3),
-            'variants'=>json_encode(['first','second','third']),
+            'variants'=>['first','second','third'],
         ];
     }
 }
