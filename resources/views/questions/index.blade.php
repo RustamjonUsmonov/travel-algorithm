@@ -21,7 +21,7 @@
                     <option selected>мегаполис</option>
                     <option>небольшой город</option>
                     <option>у моря</option>
-                    <option>у озера/реки</option>
+                    <option>у озера/реки </option>
                     <option>в горах</option>
                 </select>
             </div>
