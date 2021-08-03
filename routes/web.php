@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/form',[\App\Http\Controllers\FormController::class,'index'])->name('forms.index');
+Route::post('/form/{form:id}/{question}',[\App\Http\Controllers\FormController::class,'nextQuestion'])->name('next-question');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
