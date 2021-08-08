@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/form', [\App\Http\Controllers\FormController::class, 'index'])->name('forms.index');
-    Route::post('/form/{form:id}/{question}', [\App\Http\Controllers\FormController::class, 'nextQuestion'])->name('next-question');
+    Route::any('/form/{form:id}/{question}', [\App\Http\Controllers\FormController::class, 'nextQuestion'])->name('next-question');
 });
 Auth::routes();
 

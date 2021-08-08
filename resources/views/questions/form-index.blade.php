@@ -3,16 +3,17 @@
 
     <div class="container">
         <div class="row">
-            <ul>
+            <ul class="">
                 @foreach($forms as $form)
-                    <li>
-                        <a class="dropdown-item"
+                    <li class="">
+                        <a class=""
                            href="{{route('next-question',[$form['id'],$form['questions'][0]['id']])}}"
                            onclick="event.preventDefault();
-                                                     document.getElementById('form').submit();">
-                            {{ __('Go') }}
+                               document.getElementById('{{'form'.$form['id']}}').submit();">
+                            {{ $form['name']}}
                         </a>
-                        <form id="form" action="{{route('next-question',[$form['id'],$form['questions'][0]['id']])}}"
+                        <form id="{{'form'.$form['id']}}"
+                              action="{{route('next-question',[$form['id'],$form['questions'][0]['id']])}}"
                               method="POST" class="d-none">
                             @csrf
                         </form>

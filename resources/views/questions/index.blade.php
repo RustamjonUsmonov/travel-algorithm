@@ -4,6 +4,7 @@
     <div class=" d-flex justify-content-center col">
         <form class="mt-5" method="post" action="{{route('next-question',[$form_id,$question['id']])}}">
             @csrf
+            @method('POST')
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="inputState">{{$question['question']}}@if($question['is_dealbreaker'])<span

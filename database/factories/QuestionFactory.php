@@ -22,9 +22,9 @@ class QuestionFactory extends Factory
      */
     public function definition()
     {
-        $formId=Form::select('id')->first();
+        $formId=Form::select('id')->get()->toArray();//dd($formId);
         return [
-            'form_id'=>$formId,
+            'form_id'=>$formId[rand(0,count($formId)-1)]['id'],
             'is_dealbreaker'=>$this->faker->boolean,
             'question'=>$this->faker->sentence(3),
             'variants'=>['first','second','third'],

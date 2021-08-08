@@ -17,5 +17,11 @@ class FormSeeder extends Seeder
         DB::table('forms')->insert([
             'name'=>'form1',
         ]);
+        DB::table('forms')->insert([
+            'name'=>'form2',
+        ]);
+        /* DB::table('forms')->insert([
+             'name'=>'form3',
+         ]);*/
     }
 }
