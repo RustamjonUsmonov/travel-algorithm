@@ -17,7 +17,7 @@ class CreateFormAnswersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('form_id')->constrained();
-            $table->foreignId('question_id')->constrained();
+            $table->foreignId('question_id')->unique()->constrained();
             $table->string('answer');
             $table->timestamps();
         });
