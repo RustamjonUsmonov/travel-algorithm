@@ -16,9 +16,13 @@ class FormSeeder extends Seeder
     {
         DB::table('forms')->insert([
             'name'=>'form1',
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('forms')->insert([
             'name'=>'form2',
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         /* DB::table('forms')->insert([
              'name'=>'form3',
